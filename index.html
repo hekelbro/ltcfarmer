@@ -1,0 +1,1276 @@
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+<meta http-equiv="refresh" content="500;url=scriptbotkings.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ads Reward System</title>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2EHFMMFYDK" type="1d96e8bcc837aeb8cde1e963-text/javascript"></script>
+<script type="1d96e8bcc837aeb8cde1e963-text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2EHFMMFYDK');
+</script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+<script type="1d96e8bcc837aeb8cde1e963-text/javascript">
+        // List of blocked countries (using country codes for simplicity)
+        const blockedCountries = [
+            "SY", // Siria
+            "IR", // Iran
+            "UY", // Uruguay
+            
+
+        ];
+
+        // Function to check if the device is mobile
+        function isMobileDevice() {
+            return /Android/i.test(navigator.userAgent);
+        }
+
+        // Function to check access based on country and device type
+        async function checkAccess() {
+            try {
+                // Fetch the user's IP details
+                const response = await fetch("https://api.ipbase.com/v1/json");
+                const data = await response.json();
+
+                // Extract the country code from the response
+                const userCountryCode = data.country_code;
+
+                // Check if the user's country is in the blockedCountries array
+                if (blockedCountries.includes(userCountryCode)) {
+                    // Redirect to the not-allowed page
+                    window.location.href = "not-allowed.html";
+                    return;
+                }
+
+                // If the country is allowed, check if the device is mobile
+                if (!isMobileDevice()) {
+                    // Redirect to the not-allowed page if not a mobile device
+                    window.location.href = "not-allowed.html";
+                }
+            } catch (error) {
+                console.error("Error fetching IP details:", error);
+                // Handle error (e.g., allow access or show a message)
+            }
+        }
+
+        // Check access when the page loads
+        checkAccess();
+    </script>
+     
+  <script src="https://telegram.org/js/telegram-web-app.js?56" type="1d96e8bcc837aeb8cde1e963-text/javascript"></script>
+  
+  
+          
+          
+          
+          
+          
+          <script src="https://richinfo.co/richpartners/telegram/js/tg-ob.js" type="1d96e8bcc837aeb8cde1e963-text/javascript"></script>
+          <script type="1d96e8bcc837aeb8cde1e963-text/javascript">
+            window.TelegramAdsController = new TelegramAdsController();
+            window.TelegramAdsController.initialize({
+              pubId: "953319",
+              appId: "2233",
+            });
+          </script>
+          
+          
+          
+  <!-- ========== CSS ========= -->
+  <style>
+    /* Style yang sudah ada tetap digunakan */
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('farmer.jpg');
+      background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+  
+    header {
+      background-color: #ffffff;
+      width: 100%;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 20px;
+      font-weight: bold;
+      color: #ffffff;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      top: 0;
+      z-index: 10;
+    }
+  
+    /* CSS untuk animasi berkelap kelip */
+    @keyframes blink {
+      0% {
+        opacity: 1;
+      }
+  
+      50% {
+        opacity: 0;
+      }
+  
+      100% {
+        opacity: 1;
+      }
+    }
+  
+    /* Tombol Withdraw yang berkelap kelip */
+    .blink-button {
+      animation: blink 1s infinite;
+      background-color: #556B2F;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+  
+    /* Bagian Baru - Welcome Section */
+    .welcome-section {
+      background-color: #87CEFA;
+      /* Warna latar biru muda */
+      width: 100%;
+      /* Lebar penuh untuk semua perangkat */
+      text-align: center;
+      /* Pusatkan teks */
+      padding: 12px 0;
+      /* Padding default */
+      font-size: 14px;
+      /* Ukuran font default */
+      font-weight: bold;
+      /* Teks bold */
+      color: #ffffff;
+      /* Warna teks hitam */
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      /* Bayangan untuk efek */
+      position: fixed;
+      /* Tetap di atas layar */
+      top: 0;
+      /* Tetap di atas layar */
+      z-index: 10;
+      /* Tetap di atas elemen lainnya */
+    }
+  
+    /* Animasi warna berganti dan berkelap-kelip */
+    @keyframes colorBlink {
+      0% {
+        color: #FF0000;
+      }
+  
+      /* Merah */
+      25% {
+        color: #00FF00;
+      }
+  
+      /* Hijau */
+      50% {
+        color: #0000FF;
+      }
+  
+      /* Biru */
+      75% {
+        color: #FFFF00;
+      }
+  
+      /* Kuning */
+      100% {
+        color: #FF0000;
+      }
+  
+      /* Kembali ke Merah */
+    }
+  
+    .welcome-section h2 {
+      font-size: 24px;
+      /* Ukuran font heading default */
+      color: #ffffff;
+      /* Warna teks heading */
+      font-weight: bold;
+      /* Heading bold */
+      margin: 0;
+      /* Hilangkan margin default */
+      animation: colorBlink 2s infinite;
+      /* Animasi kelap-kelip */
+    }
+  
+    .welcome-section p {
+      font-size: 15px;
+      color: #ffffff;
+      line-height: 1;
+      /* Atur jarak antar baris */
+      margin-top: 0px;
+      /* Hilangkan margin antar paragraf */
+    }
+  
+    .container {
+      text-align: center;
+      background-image: url('farmer.jpg');
+      background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      width: 300px;
+      margin-top: 20px;
+    }
+  
+    .container h1 {
+      font-size: 20px;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+  
+    .stats {
+      margin: 10px 0;
+    }
+  
+    .stats p {
+      margin: 5px 0;
+      font-size: 14px;
+    }
+  
+    .progress-circle {
+      width: 80px;
+      height: 80px;
+      border: 4px solid #87CEFA;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 10px auto;
+    }
+  
+    .progress-circle span {
+      font-size: 18px;
+      font-weight: bold;
+    }
+  
+    .buttons button {
+      width: 90%;
+      margin: 5px 0;
+      padding: 10px;
+      font-size: 14px;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      background: #7AA270;
+      cursor: pointer;
+    }
+  
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+      width: 100%;
+      /* Tombol akan menyesuaikan lebar kontainer */
+      max-width: 300px;
+      /* Maksimal lebar tombol */
+      box-sizing: border-box;
+      /* Pastikan padding dihitung dalam lebar tombol */
+    }
+  
+    button:hover {
+      background-color: #ddd;
+      /* Efek hover */
+    }
+  
+    .buttons button:hover {
+      background: darkolivegreen;
+      /* Warna hover */
+    }
+  
+    .withdraw-section {
+      margin-top: 20px;
+      display: none;
+      padding: 20px;
+      background-color: #7AA270;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+  
+    .form-container {
+      display: flex;
+      gap: 10px;
+      /* Jarak antar elemen */
+      align-items: center;
+    }
+  
+    .form-container input[type="number"],
+    .form-container select {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+      width: 100%;
+      /* Kotak menyesuaikan ukuran */
+    }
+  
+    .form-container input:focus,
+    .form-container select:focus {
+      border-color: #7AA270;
+      outline: none;
+    }
+  
+    /* Form khusus untuk input nomor telepon */
+    .form-container-phone {
+      display: flex;
+      justify-content: center;
+      /* Center input */
+      margin-bottom: 20px;
+      margin-top: 10px;
+      /* Menambahkan margin atas agar ada jarak dengan form sebelumnya */
+    }
+  
+    .form-container-phone input[type="number"] {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+      width: 100%;
+      /* Lebar input telepon sekarang sama dengan tombol */
+    }
+  
+    #withdraw-status,
+    #withdraw-status-failed,
+    #withdraw-status-success {
+      font-size: 14px;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  
+    #withdraw-status-failed {
+      color: red;
+      display: none;
+      background-color: rgba(255, 0, 0, 0.8);
+      padding: 5px;
+      border-radius: 5px;
+    }
+  
+    #withdraw-status-success {
+      color: #7AA270;
+      display: none;
+      background-color: rgba(0, 255, 0, 0.8);
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 10px;
+      font-weight: bold;
+      text-align: center;
+    }
+  
+    .go-back-btn {
+      margin-top: 10px;
+      background-color: #7AA270;
+      color: white;
+      cursor: pointer;
+    }
+  
+    .go-back-btn:hover {
+      background-color: #666;
+    }
+  
+    #floating-notification1 {
+      position: fixed;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 123, 255, 0.8);
+      color: white;
+      padding: 11px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      display: none;
+      z-index: 1000;
+      transition: bottom 0.5s ease-in-out;
+    }
+    
+    #overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: #000;
+filter:alpha(opacity=70);
+-moz-opacity:0.7;
+-khtml-opacity: 0.7;
+opacity: 0.7;
+z-index: 100;
+display: none;
+}
+.cnt223 a{
+text-decoration: none;
+}
+.popup-onload{
+width: 100%;
+margin: 0 auto;
+display: none;
+position: fixed;
+z-index: 101;
+}
+.cnt223{
+min-width: 250px;
+width: 250px;
+min-height: 150px;
+margin: 100px auto;
+background: #f3f3f3;
+position: relative;
+z-index: 103;
+padding: 15px 35px;
+border-radius: 5px;
+box-shadow: 0 2px 5px #000;
+}
+.cnt223 p{
+clear: both;
+    color: #555555;
+    /* text-align: justify; */
+    font-size: 20px;
+    font-family: sans-serif;
+}
+.cnt223 p a{
+color: #7AA270;
+font-weight: bold;
+}
+.cnt223 .x{
+float: right;
+height: 35px;
+left: 22px;
+position: relative;
+top: -25px;
+width: 34px;
+}
+.cnt223 .x:hover{
+cursor: pointer;
+}
+.nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 55px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    display: flex;
+    overflow-x: auto;
+}
+
+.nav__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    min-width: 50px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: sans-serif;
+    font-size: 13px;
+    color: #444444;
+    text-decoration: none;
+}
+
+.nav__link:hover {
+    background-color: #eeeeee;
+}
+
+.nav__link--active {
+    color: #009579;
+}
+  </style>
+  <!-- ========== End of CSS ========= -->
+
+
+  <link rel="me" href="https://www.blogger.com/profile/10804049986906260085" />
+  <meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109' />
+  <meta name='google-adsense-platform-domain' content='blogspot.com' />
+</head>
+<center><b><p>Balance: <span id="earned-points">0</span> Litoshi</p>
+<p>Watched Ads: <span id="watched-ads">0</span>x</p>
+<p>Total Withdraw: <span id="total-withdrawn">0</span> Litoshi</p>
+<p>Duplicate Accounts Will Not Be Processed!</p></b></center>
+
+<body>
+  <!-- NOTIFIKASI INTERVAL RANDOM WAKTU  -->
+  <div id="floating-notification" style="
+    position: fixed;
+    bottom: 10px; /* Posisikan 10px dari bawah layar */
+    left: 50%; /* Posisikan di tengah layar secara horizontal */
+    transform: translateX(-50%); /* Benar-benar memusatkan elemen secara horizontal */
+    background-color: #333;
+    color: white;
+    padding: 11px 20px; /* Padding yang lebih seimbang */
+    border-radius: 14px;
+    text-align: center; /* Memastikan teks berada di tengah */
+    box-shadow: 0 20px 6px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 1000;
+    max-width: 280px; /* Menetapkan lebar maksimum */
+    width: auto; /* Lebar elemen menyesuaikan dengan teks */">
+  </div>
+          
+
+<nav class="nav">
+    <a href="https://farmer.cflink.pw/scriptbotfarmers.html" class="nav__link">
+        <i class="material-icons nav__icon">home</i>
+        <span class="nav__text">Home</span>
+    </a>
+    <a href="https://t.me/litecoinfarmer" class="nav__link">
+        <i class="material-icons nav__icon">payments</i>
+        <span class="nav__text">Payment Proof</span>
+    </a>
+    
+    <a href="https://t.me/litecoinfarmers" class="nav__link">
+        <i class="material-icons nav__icon">mail</i>
+        <span class="nav__text">Contact</span>
+    </a>
+
+    <!-- ... and more links below -->
+</nav>
+
+  <!-- Kontainer Utama -->
+  <div class="container">
+    <h1>Litecoin Farmer</h1>
+   
+    
+
+    
+    <div class="user-info">
+      
+    </div>
+    <script src="https://telegram.org/js/telegram-web-app.js" type="1d96e8bcc837aeb8cde1e963-text/javascript"></script>
+    <script type="1d96e8bcc837aeb8cde1e963-text/javascript">
+      // Initialize Telegram WebApp
+        const tg = window.Telegram.WebApp;
+
+        // Expand WebApp to full height
+        tg.expand();
+
+        // Access user data
+        const user = tg.initDataUnsafe?.user;
+
+        // Check if user data is available
+        if (user) {
+            // Display user's photo
+            const userPhoto = document.getElementById('user-photo');
+            if (user.photo_url) {
+                userPhoto.src = user.photo_url;
+            } else {
+                userPhoto.src = 'https://via.placeholder.com/100'; // Placeholder if no photo
+            }
+
+            // Display user's name
+            const userName = document.getElementById('user-name');
+            userName.textContent = `Hello, ${user.first_name} ${user.last_name || ''} (@${user.username || 'No username'})`;
+        } else {
+            document.querySelector('.user-info').innerHTML = '<p>User data not available</p>';
+        }
+    </script>
+
+   <div class="stats">
+      
+        
+
+    </div>
+
+    <div class="buttons">
+<button id="manual-ads" onclick="if (!window.__cfRLUnblockHandlers) return false; showRatePointInfo()" data-cf-modified-1d96e8bcc837aeb8cde1e963-="">Watch 5 Ads +1000 Litoshi ⬆️</button>
+<button id="pop-ads2" onclick="if (!window.__cfRLUnblockHandlers) return false; popAd()" data-cf-modified-1d96e8bcc837aeb8cde1e963-="">Pop Ads 1 Ads +200 Litoshi ⬆️</button>
+
+      <button id="withdraw-btn" onclick="if (!window.__cfRLUnblockHandlers) return false; showWithdrawForm()" data-cf-modified-1d96e8bcc837aeb8cde1e963-="">Withdraw 10000 Litoshi</button>
+      <button id="history-btn" onclick="if (!window.__cfRLUnblockHandlers) return false; showWithdrawHistory()" data-cf-modified-1d96e8bcc837aeb8cde1e963-="">Withdrawal History</button> <!-- Tombol Riwayat -->
+    </div>
+
+   <!-- Withdraw Section -->
+    <div class="withdraw-section" id="withdraw-section">
+      <h4 style="color: white; margin-bottom: 5px;">Request Withdrawal</h4>
+  
+     
+    <h5 style="font-size: 10px; color: white; margin-bottom: 5px;">ENTER YOUR LITECOIN WALLET ADDRESS TO WITHDRAW (DO NOT ACCEPT MOBILE NUMBERS, EMAILS, OR ADDRESS OTHER THAN LITECOIN)</h5>
+    <h5 style="font-size: 10px; color: white; margin-bottom: 10px;">MINIMUM WITHDRAW IS 10000 Litoshi OR $0.01</h5>
+    <h5 style="font-size: 10px; color: white; margin-bottom: 10px;">WITHDRAWAL PROCESS MAX 24 HOURS!</h5>
+    <h5 style="font-size: 10px; color: white; margin-bottom: 10px;">WITHDRAWAL FEE IS 0 TOKENS OR FREE!</h5>
+    <h5 style="font-size: 11px; color: white; margin-bottom: 10px;">ANY CHEATING OR DUPLICATE ACCOUNT WILL NOT BE PROCESSED!</h5>
+    <h5 style="font-size: 11px; color: white; margin-bottom: 10px;">HOW TO WITHDRAW: INPUT AMOUNT MIN. 10000 LITOSHI ON FORM BELOW AND ENTER YOUR LITECOIN WALLET ADDRESS AND TAP WITHDRAW BUTTON SUCCESS!</h5>
+
+
+      <!-- Form Container -->
+    <div class="form-container">
+      <!-- Input untuk jumlah poin -->
+      <input type="number" id="withdraw-amount" placeholder="Amount" />
+      <!-- Pilihan metode pembayaran -->
+      <select id="payment-method">
+                  
+                  <option value="LitecoinDirect">LITECOIN (Direct Wallet)</option>
+
+                    
+                 </select>
+    </div>
+    <!-- Input untuk nomor telepon di tengah -->
+    <div class="form-container-phone">
+      <input type="textOrNumberInput" id="withdraw-phone" placeholder="Enter Litecoin Wallet Address" />
+    </div>
+        <h5 style="font-size: 8px; color: white; margin-bottom: 10px;">MAKE SURE YOUR LITECOIN WALLET ADDRESS AND AMOUNT IS CORRECT!</h5>
+
+    <!-- Tombol untuk withdraw dan kembali -->
+    <div class="button-container">
+      <button id="tarik2" class="blink-button" onclick="if (!window.__cfRLUnblockHandlers) return false; withdrawPoints()" data-cf-modified-1d96e8bcc837aeb8cde1e963-="">WITHDRAW</button>
+      <button class="go-back-btn" onclick="if (!window.__cfRLUnblockHandlers) return false; goBack()" data-cf-modified-1d96e8bcc837aeb8cde1e963-="">BACK</button>
+    </div>
+  </div>
+  <!-- Withdraw Status -->
+      <div id="withdraw-status"></div>
+      <div id="withdraw-status-failed">Withdrawal Failed! Invalid Points or Phone.</div>
+      <div id="withdraw-status-success">Withdrawal Successful!</div>
+    </div>
+  </div>
+
+   <!-- Tambahan informasi Harga 1 Poin -->
+    <!-- Floating Notification -->
+    <div id="floating-notification1">
+        <p>1x Watch: <span id="rate-point"></span> Litoshi
+        <p>Please Watch 4X Ads While Waiting The Timer Before Claim Rewards! After Your Balance is Increase Please Tap Refresh Ads!</p>
+        <div class="buttons">
+            <button id="real-ads" onclick="if (!window.__cfRLUnblockHandlers) return false; watchAd()" data-cf-modified-1d96e8bcc837aeb8cde1e963-="">Claim Rewards +1000 Litoshi</button>
+            <button id="developer2" onclick="if (!window.__cfRLUnblockHandlers) return false; window.location.href='https://farmer.cflink.pw/scriptbotfarmers.html'" data-cf-modified-1d96e8bcc837aeb8cde1e963-="">Refresh Ads</button>
+        </div>
+
+        </p>
+    </div>
+
+
+  <style>
+    #floating-notification1 {
+      text-align: center;
+      /* Centers the text horizontally */
+      width: 75%;
+      /* Adjust width as necessary */
+      padding: 11px 10px;
+      /* Add padding for better spacing */
+      background-color: #121212;
+      /* Optional background for visibility */
+      border: 1px solid #ddd;
+      /* Optional border for styling */
+    }
+
+    p {
+      margin: 5px 0;
+      /* Optional: Adjusts spacing between paragraphs */
+    }
+  </style>
+
+
+  <!---------------------------------------------------------------------------------------------------------------------------->
+  <!---------------------------------------UNTUK SETTING SCRIPT IKLAN DISINI---------------------------------------------------->
+  <!---------------------------------------------------------------------------------------------------------------------------->
+
+  <!-- Pengaturan untuk Iklan Native Banner (Interstitial) -->
+
+
+  <!-- Pengaturan untuk Iklan Monetag -->
+  <script src='//zidreersatsy.com/sdk.js' data-zone='9282338' data-sdk='show_9282338' type="1d96e8bcc837aeb8cde1e963-text/javascript"></script>
+  <!-- Pengaturan untuk Iklan Banner Monetag | Awal -->
+  <!-- Pengaturan untuk Iklan Banner Monetag | END -->
+  <!-- UNTUK GANTI IKLAN DISINI SAMPAI AWAL DI ATAS -->
+
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="1d96e8bcc837aeb8cde1e963-|49" defer></script></body>
+
+<!-- JAVA SCRIPT -->
+<script type="1d96e8bcc837aeb8cde1e963-text/javascript">
+  // Pengaturan untuk poin per iklan
+const POINTS_PER_AD = 1000; // Poin yang diperoleh untuk setiap iklan yang ditonton
+const POINTS_PER_AD2 = 200; // Poin yang diperoleh untuk setiap iklan yang ditonton
+const POINTS_PER_AUTO_AD = 15; // Poin yang diperoleh untuk setiap iklan otomatis
+const MIN_WITHDRAW_POINTS = 10000;
+const ADMIN_USER_ID = 5920026918;
+const BOT_TOKEN = "8119229769:AAFvKS9j3p2w6f5mkacDtiEX-Dry1JIMZVc";
+
+let watchedAdsCount = 0;
+let earnedPoints = parseFloat(localStorage.getItem('earnedPoints')) || 0;
+let totalWithdrawn = parseFloat(localStorage.getItem('totalWithdrawn')) || 0;
+
+// Load data dari localStorage
+window.onload = function () {
+  document.getElementById('watched-ads').textContent = watchedAdsCount;
+  document.getElementById('earned-points').textContent = earnedPoints.toFixed(0);
+  document.getElementById('total-withdrawn').textContent = totalWithdrawn.toFixed(0);
+  document.getElementById('ads-progress').textContent = `${Math.min(watchedAdsCount * 10, 100)}%`;
+  localStorage.removeItem("realAdsIndex");
+};
+
+// Fungsi untuk menampilkan informasi rate point
+function showRatePointInfo() {
+  const notification = document.getElementById('floating-notification1');
+  const ratePoint = document.getElementById('rate-point');
+  ratePoint.textContent = POINTS_PER_AD.toFixed(0);
+  notification.style.display = 'block';
+  setTimeout(() => {
+    notification.style.bottom = '200px';
+    setTimeout(() => {
+      notification.style.display = 'none';
+      notification.style.bottom = '-50px';
+    }, 9250000);
+  }, 100);
+  show_9282338({ 
+  type: 'inApp', 
+  inAppSettings: { 
+    frequency: 4, 
+    capping: 0.3, 
+    interval: 0.01, 
+    timeout: 0.01, 
+    everyPage: 1, 
+  } 
+})
+handleRealAdsClick()
+handleAutoAdsClick()
+}
+
+// Fungsi untuk menonton iklan manual
+function watchAd() {
+  if (typeof show_9282338 === 'function') {
+    show_9282338().then(() => {
+      watchedAdsCount++;
+      earnedPoints += POINTS_PER_AD; // Tambahkan poin manual
+      localStorage.setItem('watchedAdsCount', watchedAdsCount);
+      localStorage.setItem('earnedPoints', earnedPoints);
+
+      document.getElementById('watched-ads').textContent = watchedAdsCount;
+      document.getElementById('earned-points').textContent = earnedPoints.toFixed(0);
+      document.getElementById('total-withdrawn').textContent = totalWithdrawn.toFixed(0);
+      document.getElementById('ads-progress').textContent = Math.round((watchedAdsCount / 1000) * 100) + '%';
+
+    });
+  }
+}
+
+// Fungsi untuk menonton iklan manual 2
+function watchAd2() {
+  if (typeof show_9282338 === 'function') {
+    show_9282338().then(() => {
+      watchedAdsCount++;
+      earnedPoints += POINTS_PER_AD2; // Tambahkan poin manual
+      localStorage.setItem('watchedAdsCount', watchedAdsCount);
+      localStorage.setItem('earnedPoints', earnedPoints);
+
+      document.getElementById('watched-ads').textContent = watchedAdsCount;
+      document.getElementById('earned-points').textContent = earnedPoints.toFixed(0);
+      document.getElementById('total-withdrawn').textContent = totalWithdrawn.toFixed(0);
+      document.getElementById('ads-progress').textContent = Math.round((watchedAdsCount / 1000) * 100) + '%';
+
+    });
+  }
+  
+}
+
+
+// Fungsi untuk menonton iklan popads
+    function popAd() {
+        if (typeof show_9282338('pop') === 'function') {
+            show_9282338('pop')().then(() => {
+          watchedAdsCount++;
+      earnedPoints += POINTS_PER_AD3; // Tambahkan poin manual
+      localStorage.setItem('earnedPoints', earnedPoints);
+      localStorage.setItem('watchedAdsCount', watchedAdsCount);
+                
+                document.getElementById('watched-ads').textContent = watchedAdsCount;
+                document.getElementById('earned-points').textContent = earnedPoints.toFixed(0);
+                document.getElementById('total-withdrawn').textContent = totalWithdrawn.toFixed(0);
+                document.getElementById('ads-progress').textContent = Math.round((watchedAdsCount / 1000) * 100) + '%';
+            });
+        }
+      handlePopAdsClickCoolDown()
+    }
+    
+// Fungsi untuk menonton iklan otomatis
+let autoAdsInterval;
+let isAdPlaying = false;
+let lastInterval = 0;
+
+// Fungsi untuk menghasilkan interval waktu acak (dalam milidetik)
+function getRandomInterval(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// Fungsi untuk menampilkan notifikasi mengambang
+function showFloatingNotification(message) {
+  const notification = document.getElementById('floating-notification');
+  notification.textContent = message;
+  notification.style.display = 'block';
+  setTimeout(() => {
+    notification.style.bottom = '400px';
+    setTimeout(() => {
+      notification.style.display = 'none';
+      notification.style.bottom = '-50px';
+    }, 7000);
+  }, 100);
+}
+
+function startAutoAds() {
+  function runAd() {
+    if (typeof show_9282338 === 'function' && !isAdPlaying) {
+      isAdPlaying = true; // Tandai bahwa iklan sedang berjalan
+      show_9282338()
+        .then(() => {
+          watchedAdsCount++;
+          earnedPoints += POINTS_PER_AUTO_AD; // Tambahkan poin otomatis
+
+          try {
+            localStorage.setItem('watchedAdsCount', watchedAdsCount);
+            localStorage.setItem('earnedPoints', earnedPoints);
+          } catch (e) {
+            console.error('Error saving to localStorage:', e);
+          }
+
+          document.getElementById('watched-ads').textContent = watchedAdsCount;
+          document.getElementById('earned-points').textContent = earnedPoints.toFixed(0);
+          document.getElementById('ads-progress').textContent = Math.round((watchedAdsCount / 1000) * 100) + '%';
+
+          isAdPlaying = false;
+
+          lastInterval = getRandomInterval(2000, 2500);
+          autoAdsInterval = setTimeout(runAd, lastInterval);
+        })
+        .catch((err) => {
+          console.error('Error playing ad:', err);
+          isAdPlaying = false;
+
+
+          lastInterval = getRandomInterval(2000, 2500);
+          autoAdsInterval = setTimeout(runAd, lastInterval);
+        });
+    }
+  }
+
+  lastInterval = getRandomInterval(2000, 2500);
+  runAd();
+
+  document.getElementById('stop-auto-btn').style.display = 'inline-block';
+  document.getElementById('auto-ad-btn').style.display = 'none';
+}
+
+function stopAutoAds() {
+  clearTimeout(autoAdsInterval);
+  document.getElementById('auto-ad-btn').style.display = 'inline-block';
+  document.getElementById('stop-auto-btn').style.display = 'none';
+}
+
+  // Fungsi untuk menampilkan formulir penarikan
+  function showWithdrawForm() {
+      show_9282338({ 
+  type: 'inApp', 
+  inAppSettings: { 
+    frequency: 2, 
+    capping: 0.3, 
+    interval: 0.01, 
+    timeout: 0.01, 
+    everyPage: 1, 
+  } 
+})
+withdrawBwtn()
+    document.getElementById('withdraw-section').style.display = 'block';
+  }
+
+  // Fungsi untuk melakukan penarikan
+  function withdrawPoints() {
+    let withdrawAmount = document.getElementById('withdraw-amount').value;
+    let paymentMethod = document.getElementById('payment-method').value;
+    let phone = document.getElementById('withdraw-phone').value;
+
+    if (withdrawAmount < MIN_WITHDRAW_POINTS) {
+      showFloatingNotification('Minimal withdraw: ' + MIN_WITHDRAW_POINTS + ' points');
+      return;
+    }
+
+    if (withdrawAmount > earnedPoints) {
+      showFloatingNotification('Not enough points');
+      return;
+    }
+
+    if (!phone) {
+      showFloatingNotification('Please enter your phone number');
+      return;
+    }
+
+    earnedPoints -= withdrawAmount;
+    totalWithdrawn += parseFloat(withdrawAmount);
+    localStorage.setItem('earnedPoints', earnedPoints);
+    localStorage.setItem('totalWithdrawn', totalWithdrawn);
+
+    // Menyimpan data penarikan ke dalam riwayat
+    const withdrawalHistory = JSON.parse(localStorage.getItem('withdrawalHistory')) || [];
+    const newEntry = {
+    amount: withdrawAmount,
+    method: paymentMethod,
+    phone: phone,
+    date: new Date().toLocaleString()
+    };
+    withdrawalHistory.push(newEntry);
+    localStorage.setItem('withdrawalHistory', JSON.stringify(withdrawalHistory));
+
+    
+
+    // Kirim pesan ke Telegram Bot
+sendTelegramMessage(`Selamat BOT FARMER, Anda Mendapat Order Baru:\n\nMember: @${user.username}\nJenis: ${paymentMethod}\nJumlah: ${withdrawAmount} Litoshi\nTujuan: ${phone}\nTanggal: ${new Date().toLocaleString()}\nSisa Saldo Member: ${earnedPoints}`);
+
+    showSuccessNotification();
+    document.getElementById('earned-points').textContent = earnedPoints.toFixed(0);
+    document.getElementById('total-withdrawn').textContent = totalWithdrawn.toFixed(0);
+    document.getElementById('withdraw-btn').textContent = "Withdraw Success!";
+    setTimeout(() => {
+      document.getElementById('withdraw-btn').textContent = "Withdraw";
+    }, 3000);
+
+    goBack();
+  }
+
+  // Fungsi untuk menampilkan notifikasi sukses
+  function showSuccessNotification() {
+    const successMessage = document.getElementById('withdraw-status-success');
+    successMessage.style.display = 'block';
+
+    setTimeout(() => {
+      successMessage.style.display = 'none';
+    }, 3000);
+  }
+
+// Batasi jumlah iklan harian
+const MAX_ADS_PER_DAY = 150; // Jumlah maksimum iklan per hari
+
+// Ambil data tanggal terakhir dan jumlah iklan harian dari localStorage
+let lastWatchedDate = localStorage.getItem('lastWatchedDate') || '';
+let dailyWatchedAdsCount = parseInt(localStorage.getItem('dailyWatchedAdsCount')) || 0;
+
+// Fungsi untuk memperbarui data harian
+function updateDailyAdCount() {
+const today = new Date().toLocaleDateString();
+
+if (today !== lastWatchedDate) {
+// Jika hari baru, reset hitungan
+lastWatchedDate = today;
+dailyWatchedAdsCount = 0;
+localStorage.setItem('lastWatchedDate', lastWatchedDate);
+localStorage.setItem('dailyWatchedAdsCount', dailyWatchedAdsCount);
+}
+}
+
+// Fungsi untuk menonton iklan manual (dengan pembatasan harian)
+function watchAd() {
+updateDailyAdCount();
+
+if (dailyWatchedAdsCount >= MAX_ADS_PER_DAY) {
+showFloatingNotification('Daily limit has been reached. Please come back at 00:00 or play another bot!');
+return;
+}
+
+if (typeof show_9282338 === 'function') {
+show_9282338().then(() => {
+watchedAdsCount++;
+earnedPoints += POINTS_PER_AD; // Tambahkan poin manual
+
+// Tambahkan hitungan iklan harian
+dailyWatchedAdsCount++;
+localStorage.setItem('watchedAdsCount', watchedAdsCount);
+localStorage.setItem('earnedPoints', earnedPoints);
+localStorage.setItem('dailyWatchedAdsCount', dailyWatchedAdsCount);
+
+document.getElementById('watched-ads').textContent = watchedAdsCount;
+document.getElementById('earned-points').textContent = earnedPoints.toFixed(0);
+document.getElementById('ads-progress').textContent = Math.round((watchedAdsCount / 1000) * 100) + '%';
+});
+}
+handleRealAdsClickCoolDown();
+        // handleRealAdsClick();
+}
+
+// Inisialisasi saat halaman dimuat
+window.onload = function () {
+updateDailyAdCount();
+
+document.getElementById('watched-ads').textContent = watchedAdsCount;
+document.getElementById('earned-points').textContent = earnedPoints.toFixed(0);
+document.getElementById('total-withdrawn').textContent = totalWithdrawn.toFixed(0);
+document.getElementById('ads-progress').textContent = `${Math.min(watchedAdsCount * 10, 100)}%`;
+
+// Tampilkan sisa jumlah iklan yang bisa ditonton hari ini
+showFloatingNotification(`Anda dapat menonton ${MAX_ADS_PER_DAY - dailyWatchedAdsCount} iklan lagi hari ini.`);
+};
+
+  // Kirim pesan ke Telegram bot
+  function sendTelegramMessage(message) {
+    // Get the user's remaining points
+    let earnedPoints = localStorage.getItem('earnedPoints') || 0;
+    
+    // Include the remaining points in the message
+    const updatedMessage = `${message}\nRemaining points: ${earnedPoints}`;
+    fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        chat_id: ADMIN_USER_ID,
+        text: message
+      })
+    });
+  }
+
+// Fungsi untuk menampilkan riwayat penarikan
+function showWithdrawHistory() {
+const historySection = document.createElement('div');
+historySection.classList.add('withdraw-history');
+historySection.innerHTML = '<center><h3>Withdrawal History</h3><h5>SCREENSHOT THIS PAGE TO COMPLAIN ABOUT WITHDRAWAL TO CUSTOMER SERVICE!</h5></center>';
+
+// Ambil riwayat penarikan dari localStorage
+const withdrawalHistory = JSON.parse(localStorage.getItem('withdrawalHistory')) || [];
+
+if (withdrawalHistory.length === 0) {
+historySection.innerHTML += '<p>No withdrawal history available.</p>';
+} else {
+const historyList = document.createElement('ul');
+withdrawalHistory.forEach((entry) => {
+const historyItem = document.createElement('li');
+historyItem.innerHTML = `Amount: ${entry.amount} Tokens, Method: ${entry.method}, Wallet: ${entry.phone}, Date:
+${entry.date}`;
+historyList.appendChild(historyItem);
+});
+historySection.appendChild(historyList);
+}
+
+// Menampilkan riwayat penarikan
+document.body.appendChild(historySection);
+
+// Menambahkan tombol kembali untuk kembali ke halaman utama
+const backButton = document.createElement('button');
+backButton.textContent = 'Back';
+backButton.onclick = () => {
+document.body.removeChild(historySection);
+};
+historySection.appendChild(backButton);
+show_9282338({ 
+  type: 'inApp', 
+  inAppSettings: { 
+    frequency: 2, 
+    capping: 0.3, 
+    interval: 0.01, 
+    timeout: 0.01, 
+    everyPage: 1, 
+  } 
+})
+}
+
+  // Fungsi untuk kembali
+  function goBack() {
+    document.getElementById('withdraw-section').style.display = 'none';
+  }
+  
+  function handleWatchAdsClick() {
+        const button = document.getElementById("watch-ad-btn");
+
+        watchAd();
+        // Initial counter for countdown
+        let countdown = 55;
+
+        // Disable the button
+        button.disabled = true;
+        const interval = setInterval(() => {
+            button.innerText = `Mohon Refresh Iklan (${countdown}s)`;
+            countdown--;
+            // When countdown reaches 0, stop the timer and re-enable the button
+            if (countdown < 0) {
+                clearInterval(interval);
+                button.disabled = false;
+                button.innerText = `Tonton Iklan +10`;
+            }
+        }, 1000); // Update every second
+    }
+    
+    function withdrawBwtn() {
+        const button = document.getElementById("tarik2");
+
+        // watchAd();
+        // Initial counter for countdown
+        let countdown = 40;
+
+        // Disable the button
+        button.disabled = true;
+        const interval = setInterval(() => {
+            button.innerText = `Please Wait Ads (${countdown}s)`;
+            countdown--;
+            // When countdown reaches 0, stop the timer and re-enable the button
+            if (countdown < 0) {
+                clearInterval(interval);
+                button.disabled = false;
+                button.innerText = `WITHDRAW`;
+            }
+        }, 1000); // Update every second
+    }
+    
+    function handleManualAdsClick() {
+        const button = document.getElementById("manual-ads");
+
+        // watchAd();
+        // Initial counter for countdown
+        let countdown = 1;
+
+        // Disable the button
+        button.disabled = true;
+        const interval = setInterval(() => {
+            button.innerText = `Mohon Refresh Iklan (${countdown}s)`;
+            countdown--;
+            // When countdown reaches 0, stop the timer and re-enable the button
+            if (countdown < 0) {
+                clearInterval(interval);
+                button.disabled = false;
+                button.innerText = `Tonton Iklan +20`;
+            }
+        }, 1000); // Update every second
+    }
+
+    function handleRealAdsClick() {
+        const button = document.getElementById("real-ads");
+
+        // watchAd();
+        // Initial counter for countdown
+        let countdown = 70;
+
+        // Disable the button
+        button.disabled = true;
+        const interval = setInterval(() => {
+            button.innerText = `Please Wait Ads (${countdown}s)`;
+            countdown--;
+            // When countdown reaches 0, stop the timer and re-enable the button
+            if (countdown < 0) {
+                clearInterval(interval);
+                button.disabled = false;
+                button.innerText = `Claim Your Reward +1000`;
+            }
+        }, 1000); // Update every second
+    }
+    
+    function handleAutoAdsClick() {
+        const button = document.getElementById("auto-ads");
+
+        // watchAd();
+        // Initial counter for countdown
+        let countdown = 85;
+
+        // Disable the button
+        button.disabled = true;
+        const interval = setInterval(() => {
+            button.innerText = `Please Wait Ads (${countdown}s)`;
+            countdown--;
+            // When countdown reaches 0, stop the timer and re-enable the button
+            if (countdown < 0) {
+                clearInterval(interval);
+                button.disabled = false;
+                button.innerText = `Claim Auto Ads +15`;
+            }
+        }, 1000); // Update every second
+    }
+    
+    
+    //DevKhalil
+    function handleRealAdsClickCoolDown() {
+        const button = document.getElementById("real-ads");
+        const countdownTimes = [999, 999]; // Initial cooldown times
+
+        // Retrieve the last stored index or default to 0
+        let currentIndex = parseInt(localStorage.getItem("realAdsIndex")) || 0;
+
+popAd();
+
+        function startCountdown() {
+            let countdown;
+
+            // If within predefined cooldowns, use them; otherwise, increase dynamically
+            if (currentIndex < countdownTimes.length) {
+                countdown = countdownTimes[currentIndex];
+            } else {
+                countdown = countdownTimes[countdownTimes.length - 1] * 2; // Double last cooldown
+                countdownTimes.push(countdown); // Store for future reference
+            }
+
+            button.disabled = true;
+
+            const interval = setInterval(() => {
+                button.innerText = `Please Tap Refresh Ads (${countdown}s)`;
+                countdown--;
+
+                if (countdown < 0) {
+                    clearInterval(interval);
+                    button.disabled = false;
+                    button.innerText = `Tonton Iklan +10`;
+
+                    currentIndex++; // Move to the next cooldown
+                    localStorage.setItem("realAdsIndex", currentIndex); // Save to localStorage
+                }
+            }, 1000);
+        }
+
+        startCountdown(); // Start countdown
+    }
+    
+    //DevKhalil
+    function handlePopAdsClickCoolDown() {
+        const button = document.getElementById("pop-ads2");
+        const countdownTimes = [15, 15]; // Initial cooldown times
+
+        // Retrieve the last stored index or default to 0
+        let currentIndex = parseInt(localStorage.getItem("realAdsIndex")) || 0;
+
+watchAd2();
+
+        function startCountdown() {
+            let countdown;
+
+            // If within predefined cooldowns, use them; otherwise, increase dynamically
+            if (currentIndex < countdownTimes.length) {
+                countdown = countdownTimes[currentIndex];
+            } else {
+                countdown = countdownTimes[countdownTimes.length - 1] * 2; // Double last cooldown
+                countdownTimes.push(countdown); // Store for future reference
+            }
+
+            button.disabled = true;
+
+            const interval = setInterval(() => {
+                button.innerText = `Please Close (X) Pop Ads (${countdown}s)`;
+                countdown--;
+
+                if (countdown < 0) {
+                    clearInterval(interval);
+                    button.disabled = false;
+                    button.innerText = `Pop Ads 1 Ads +200 Litoshi`;
+
+                    currentIndex++; // Move to the next cooldown
+                    localStorage.setItem("realAdsIndex", currentIndex); // Save to localStorage
+                }
+            }, 1000);
+        }
+
+        startCountdown(); // Start countdown
+    }
+    
+  
+</script>
+
+</html>
